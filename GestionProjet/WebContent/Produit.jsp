@@ -1,3 +1,4 @@
+<%@page import="metier.Operation"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page  import="web.ProduitBeans" %>
@@ -27,7 +28,9 @@ out.println(b);
 	if (request.getAttribute("modele")!=null){
 		produits =  (ProduitBeans) request.getAttribute("modele");
 	}else{
+		Operation o = new Operation();
 		produits = new ProduitBeans();
+		produits.setListe(o.getAll());
 	}
 		
 %>

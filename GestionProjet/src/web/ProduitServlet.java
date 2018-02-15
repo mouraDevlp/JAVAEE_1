@@ -16,7 +16,7 @@ import metier.Produit;
 public class ProduitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	 Operation op;
+	/* Operation op;
 	
     public ProduitServlet() {
         super();
@@ -24,7 +24,7 @@ public class ProduitServlet extends HttpServlet {
 
     public void init () throws ServletException{
     	op = new Operation();
-    }
+    }*/
     
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,7 +35,7 @@ public class ProduitServlet extends HttpServlet {
 	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		Operation op = new Operation();
 		if(request.getParameter("action")!=null) {
 			op.remove(Long.parseLong(request.getParameter("id")) );
 			/*ProduitBeans pb = new ProduitBeans();
